@@ -1,0 +1,124 @@
+{
+  "format": "LINDBLAD/COMMERCIAL_SHOWCASE_PROOF/v1+public-redacted",
+  "instanceId": "lico-demo-001-421614",
+  "chainId": 421614,
+  "source": "Public chain data of the Lindblad Commercial E2E Demo v1 (2026-10-08); every transaction status 1, verified on two independent providers at execution.",
+  "contracts": {
+    "safeGov": "0x8591605a68974beb1be5e4963e7451aa01c3216e",
+    "safeOps": "0xa4c249dd35a8649182a40e79d12b630a8be9b8b4",
+    "token": "0xb2dce511b798b5975efb2691dce610742e089bc2",
+    "dvp": "0x9e35e8ce0ab155a48847c354f184e52f3fd9ba8b",
+    "testAsset": "0xfc7a0bd4adb0f69e1dfdbe45a6a45fda5d8a4761",
+    "usdc": "0x75faf114eafb1bdbe2f0316df893fd58ce46aa4d"
+  },
+  "certifiedQuantity": {
+    "value": "19.950 t",
+    "source": "RWA Core certified quantity from three independent, authorized third-party sources (warehouse receipt, weight ticket, laboratory certificate). The determination rules are proprietary and not published."
+  },
+  "transactions": [
+    {
+      "n": 1,
+      "stage": "Deployment",
+      "step": "create SAFE-GOV (2-of-3)",
+      "role": "Executor",
+      "txHash": "0x9def97b517416320616bc06b5b55f691843f15e0033c6e33c545af57f796a370",
+      "block": 316924411,
+      "gasUsed": 305871
+    },
+    {
+      "n": 2,
+      "stage": "Deployment",
+      "step": "create SAFE-OPS (2-of-3)",
+      "role": "Executor",
+      "txHash": "0x765eb3d7cb6ea2d63dbe04d35553ac476701ce1a8d28d6411648b7cc07497ec3",
+      "block": 316930449,
+      "gasUsed": 305871
+    },
+    {
+      "n": 3,
+      "stage": "Deployment",
+      "step": "deploy tLICO token",
+      "role": "Deployer",
+      "txHash": "0x20b332be67779afec2f75aa4320f13728948025c8c7aaca8243a0fd57f4d520a",
+      "block": 316934102,
+      "gasUsed": 2511438
+    },
+    {
+      "n": 4,
+      "stage": "Deployment",
+      "step": "deploy DvP settlement",
+      "role": "Deployer",
+      "txHash": "0x88c986d6ec47a310356be5ecc17767077462f21890c2744c1e03820267f348e3",
+      "block": 316938776,
+      "gasUsed": 1229928
+    },
+    {
+      "n": 5,
+      "stage": "Deployment",
+      "step": "deploy TEST regression asset",
+      "role": "Deployer",
+      "txHash": "0xfdb416340a3b65092fea7a5cfa4e16d648ce6a50ebb4769249c6208d4b9b8ae2",
+      "block": 316946992,
+      "gasUsed": 484710
+    },
+    {
+      "n": 6,
+      "stage": "Governance",
+      "step": "setControls(63) via SAFE-GOV 2-of-3",
+      "role": "Executor",
+      "txHash": "0x0a887b85b5774127848e67c1f4ba2132b80d00e6055c054f3374baf3bd77940f",
+      "block": 316964192,
+      "gasUsed": 123088
+    },
+    {
+      "n": 7,
+      "stage": "Governance",
+      "step": "setSettlementContract(DvP) via SAFE-GOV 2-of-3",
+      "role": "Executor",
+      "txHash": "0xa4f787c0d6be069c21dd58a3447be2dcfbcff7356b41d89b64b54c5a08f0fd23",
+      "block": 316970671,
+      "gasUsed": 86109
+    },
+    {
+      "n": 8,
+      "stage": "Tokenization",
+      "step": "mint 1.000 tLICO to the Producer (SAFE-OPS 2-of-3)",
+      "role": "Executor",
+      "txHash": "0x4c03c44162902c6374b920a1e4b2874a486c81e8629c6ae7a3563bd91cb378ef",
+      "block": 317062197,
+      "gasUsed": 139411
+    },
+    {
+      "n": 9,
+      "stage": "Sale",
+      "step": "TRADE_LOCK commit (SAFE-OPS 2-of-3)",
+      "role": "Executor",
+      "txHash": "0xfec6882ccc13702f5c93743df02c71ab2d072320e946e647e7a7a15158ced3f2",
+      "block": 317076675,
+      "gasUsed": 186541
+    },
+    {
+      "n": 10,
+      "stage": "Sale",
+      "step": "exact USDC approve (10.050000) to the DvP",
+      "role": "Buyer",
+      "txHash": "0x213343bf03024bc9b46857d4ad334e88d58d655d8f95569de89fde59cccf7617",
+      "block": 317083883,
+      "gasUsed": 55437
+    },
+    {
+      "n": 11,
+      "stage": "Sale",
+      "step": "atomic DvP settlement (SAFE-OPS 2-of-3)",
+      "role": "Executor",
+      "txHash": "0x56835abc29a0614d54720e83cd1779deae18c02fe5f1f1baf8466f2438460f7b",
+      "block": 317084903,
+      "gasUsed": 227626
+    }
+  ],
+  "market": {
+    "minTradeQuantity": "0.010 t",
+    "feeBps": 50,
+    "feeNote": "Test fee used in the demo — not a commercial fee policy."
+  }
+}
